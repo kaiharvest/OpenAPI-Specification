@@ -1,0 +1,103 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Todolist RESTful API",
+    "version": "1",
+    "description": "OpenAPI for Todolist RESTful API",
+    "termsOfService": "https://www.indradwiprabowo.com",
+    "contact": {
+      "name": "Indra Dwi Prabowo",
+      "email": "indradwiprabowo27@gmail.com",
+      "url": "https://www.indradwiprabowo.com"
+    },
+    "license": {
+      "name": "APACHE 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "servers" : [
+    {
+      "description": "Todolist RESTful API Server",
+      "url": "https://{environment}.indradwiprabowo.com/api/v1",
+      "variables": {
+        "environment": {
+          "descriptions": "Server Environment",
+          "default": "dev",
+          "enum": [
+            "dev",
+            "qa",
+            "prod"
+          ]
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Youtube Programmer Zaman Now",
+    "url": "https://www.youtube.com/watch?v=o5b6TYSNK5c&t=1s"
+  },
+  "paths": {
+    "/todolist": {
+      "get": {
+        "summary": "GET all Todolist",
+        "description": "Get all active todolist bye default",
+        "parameters": [
+          {
+            "name": "include_done",
+            "in": "query",
+            "required": false,
+            "description": "Is include done todolist"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "description": "Filter todolist bye name"
+          }
+        ],
+        "responses": {
+
+        }
+      },
+      "post": {
+        "summary": "CREATE new Todolist",
+        "description": "Create Todolist to database",
+        "responses": {
+
+        }
+      }
+    },
+    "/todolist/{todolistId}": {
+      "put": {
+        "summary": "UPDATE existing todolist",
+        "description": "Update existing todolist in database",
+        "parameters": [
+          {
+            "name": "todolistId",
+            "in": "path",
+            "required": true,
+            "description": "Todolist id for updated"
+          }
+        ],
+        "responses": {
+
+        }
+      },
+      "delete": {
+        "summary": "DELETE existing todolist",
+        "description": "Delete existing todolist in database",
+        "parameters": [
+          {
+            "name": "todolistId",
+            "in": "path",
+            "required": true,
+            "description": "Todolist id for deleted"
+          }
+        ],
+        "responses": {
+
+        }
+      }
+    }
+  }
+}

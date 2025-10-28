@@ -48,7 +48,9 @@
             "required": false,
             "description": "Is include done todolist",
             "schema": {
-              "type": "boolean"
+              "type": "boolean",
+              "nullable": "true",
+              "default": "false"
             }
           },
           {
@@ -57,7 +59,11 @@
             "required": false,
             "description": "Filter todolist bye name",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "nullable": "true",
+              "minLength": 1,
+              "maxLength": 100,
+              "default": "false"
             }
           }
         ],
